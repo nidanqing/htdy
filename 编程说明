@@ -1,0 +1,11 @@
+在htdymainframe.java中给htTmpFileName变量直接赋值测试文件名和路径
+HTConvert.java负责从html中采集合同数据-htsjcj,参数是html文件名，返回htxx对象
+学习如何使用生成XML文件，在HTConvert.java中写一个方法-dyXml,参数是对象htxx，把htxx.get***()得到的各项指标写到xml文件中去
+找一个地方使用dyXml方法，这个地方应该是把使用dyht_excel出现的地方，替换掉他,这个地方在HtdyMainFrame.java中，对这个文件的printBTNActionPerformed方法能进行了改动
+程序原创为常州行胡海克工程师，他慷慨地提供了源代码，和所有JAR包。
+我刚回来，三天查找资料分析，解决了NoSuchMethodError，原因是重复地加载了htmlparser包。
+不能使用dom4j,而只能使用他的jdom
+bzqjyd这个类好象不是对应合同的条款的暂时不使用
+这个程序只可以用jre7作为运行环境，所以必须在生产机上配套安装.
+在生成借款人xml数据时，单个人、三个人都会发生错误，主要是借款人数量要搞清，类里边有的数据是NULL,出错就是在这里，所以重新写了sjcj方法中的借款人采集
+只有使用jre作为运行环境，采集的html格式都不标准，不能配套程序进行解析
